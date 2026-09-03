@@ -1,0 +1,97 @@
+{
+  "config": {
+    "marmitaPrice": 20.0,
+    "deliveryFee": 5.0,
+    "pixKey": "000.111.222-33",
+    "whatsappNumber": "55819920036280"
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "passwordHash": "$2a$10$w82E/2DAnT9C8sN.L/jQvuQhR6x9T6x7.aHk69.7m1D.Uu0dGv6yK",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "gerente",
+      "passwordHash": "$2a$10$C823jQ82A0sO.zI6a.M8u.4zC9M2x4S0uI6k4W1s3E6V7X8Y9Z0a1",
+      "role": "gerente"
+    }
+  ],
+  "menu": {
+    "sides": [
+      { "id": "s1", "name": "Arroz Branco", "available": true },
+      { "id": "s2", "name": "Arroz Carioca", "available": true },
+      { "id": "s3", "name": "Feijão Macassar", "available": true },
+      { "id": "s4", "name": "Feijão Mulato", "available": true },
+      { "id": "s5", "name": "Feijão Preto", "available": true },
+      { "id": "s6", "name": "Legumes", "available": true },
+      { "id": "s7", "name": "Macarrão", "available": true },
+      { "id": "s8", "name": "Pirão", "available": true },
+      { "id": "s9", "name": "Purê", "available": true },
+      { "id": "s10", "name": "Salada", "available": true }
+    ],
+    "proteins": [
+      { "id": "p1", "name": "Almôndegas ao molho", "available": true },
+      { "id": "p2", "name": "Bisteca Suína", "available": true },
+      { "id": "p3", "name": "Bobó de Camarão", "available": true },
+      { "id": "p4", "name": "Camarão alho e óleo", "available": true },
+      { "id": "p5", "name": "Costela ao Molho Madeira", "available": true },
+      { "id": "p6", "name": "Costela no Bafo", "available": true },
+      { "id": "p7", "name": "Costela Guisada", "available": true },
+      { "id": "p8", "name": "Cozido (arroz, pirão, legumes e carne)", "available": true },
+      { "id": "p9", "name": "Creme de Bacalhau", "available": true },
+      { "id": "p10", "name": "Empadão de frango", "available": true },
+      { "id": "p11", "name": "Escondidinho de charque", "available": true },
+      { "id": "p12", "name": "Feijoada", "available": true },
+      { "id": "p13", "name": "Fígado acebolado", "available": true },
+      { "id": "p14", "name": "Frango a quatro queijos com calabresa", "available": true },
+      { "id": "p15", "name": "Frango grelhado", "available": true },
+      { "id": "p16", "name": "Frango milanesa", "available": true },
+      { "id": "p17", "name": "Fricassê de frango", "available": true },
+      { "id": "p18", "name": "Galinha assada", "available": true },
+      { "id": "p19", "name": "Galinha guisada", "available": true },
+      { "id": "p20", "name": "Guisado de boi", "available": true },
+      { "id": "p21", "name": "Omelete de Charque", "available": true },
+      { "id": "p22", "name": "Panqueca de carne", "available": true },
+      { "id": "p23", "name": "Panqueca de Frango", "available": true },
+      { "id": "p24", "name": "Parmegiana frango", "available": true },
+      { "id": "p25", "name": "Peixe Frito", "available": true },
+      { "id": "p26", "name": "Polpetone de carne", "available": true },
+      { "id": "p27", "name": "Rocambole de frango", "available": true },
+      { "id": "p28", "name": "Sardinha na pressão", "available": true },
+      { "id": "p29", "name": "Strogonoff de Frango", "available": true },
+      { "id": "p30", "name": "Yakisoba Especial", "available": true }
+    ],
+    "drinks": [
+      { "id": "d1", "name": "Coca-cola – Zero", "price": 7.0, "available": true },
+      { "id": "d2", "name": "Antártica – Zero", "price": 6.0, "available": true },
+      { "id": "d3", "name": "Sprite – Zero", "price": 6.0, "available": true },
+      { "id": "d4", "name": "Coca-cola", "price": 7.0, "available": true },
+      { "id": "d5", "name": "Fanta", "price": 6.0, "available": true },
+      { "id": "d6", "name": "Antártica", "price": 6.0, "available": true },
+      { "id": "d7", "name": "Sprite", "price": 6.0, "available": true },
+      { "id": "d8", "name": "H2O", "price": 8.0, "available": true },
+      { "id": "d9", "name": "Laranja (natural) 350ml", "price": 6.0, "available": true },
+      { "id": "d10", "name": "Graviola 500ml", "price": 6.0, "available": true },
+      { "id": "d11", "name": "Manga 500ml", "price": 6.0, "available": true },
+      { "id": "d12", "name": "Cajá 500ml", "price": 6.0, "available": true },
+      { "id": "d13", "name": "Uva 500ml", "price": 6.0, "available": true },
+      { "id": "d14", "name": "Acerola 500ml", "price": 6.0, "available": true },
+      { "id": "d15", "name": "Mangaba 500ml", "price": 6.0, "available": true },
+      { "id": "d16", "name": "Abacaxi com hortelã 500ml", "price": 6.0, "available": true }
+    ],
+    "desserts": [
+      { "id": "e1", "name": "Bolo de noiva", "price": 15.0, "available": true },
+      { "id": "e2", "name": "Bolo de Pote", "price": 8.0, "available": true },
+      { "id": "e3", "name": "Delícia de Abacaxi", "price": 8.0, "available": true },
+      { "id": "e4", "name": "Mousse de Chocolate", "price": 6.0, "available": true },
+      { "id": "e5", "name": "Mousse de Maracujá", "price": 6.0, "available": true },
+      { "id": "e6", "name": "Mousse de Morango", "price": 6.0, "available": true },
+      { "id": "e7", "name": "Pote da Felicidade", "price": 12.0, "available": true },
+      { "id": "e8", "name": "Pudim", "price": 10.0, "available": true },
+      { "id": "e9", "name": "Torta de Chocolate", "price": 10.0, "available": true }
+    ]
+  }
+}

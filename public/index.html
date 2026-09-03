@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante do Irmão - Comida Regional</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Topo com Relógio BRT -->
+  <header class="top-bar">
+    <span id="brt-clock">--/--/---- --:--:-- BRT</span>
+  </header>
+
+  <!-- Cabeçalho Principal -->
+  <header class="main-header">
+    <h1>Restaurante do Irmão</h1>
+    <p>A melhor comida regional de Recife</p>
+  </header>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a id="btn-floating-whatsapp" href="#" target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+    💬
+  </a>
+
+  <!-- Layout Principal -->
+  <main class="container">
+    
+    <!-- Prévia do Cardápio à Esquerda (2mm em Repouso no Mobile / Esquerda na Desktop) -->
+    <aside class="menu-preview-drawer" id="menu-drawer">
+      <button id="toggle-drawer-btn" class="drawer-handle">📖 Cardápio do Dia</button>
+      <div class="drawer-content" id="preview-content">
+        <!-- Renderizado via JS -->
+      </div>
+    </aside>
+
+    <!-- Área de Chamada Principal -->
+    <section class="hero-section">
+      <button id="btn-start-order" class="btn-pulse">Faça o Seu Pedido 🍽️</button>
+
+      <div class="pix-card">
+        <p>Preparamos tudo com muito carinho!</p>
+        <span class="pix-label">Chave PIX:</span>
+        <h2 id="display-pix-key">Carregando...</h2>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="main-footer">
+    <h2>Venha almoçar conosco</h2>
+    <p>Rua vermelha, 02, Torre, Recife – PE</p>
+    <div class="footer-actions">
+      <a href="https://maps.google.com/?q=Rua+vermelha+02+Torre+Recife+PE" target="_blank" class="btn-secondary">📍 Abrir no Google Maps</a>
+      <button id="btn-open-manage" class="btn-manage">Gerenciar ⚙️</button>
+    </div>
+  </footer>
+
+  <!-- MODAL DE PEDIDO (FLUXO PASSO A PASSO) -->
+  <div id="modal-order" class="modal">
+    <div class="modal-content modal-large">
+      <button class="close-btn" id="close-order-modal">&times;</button>
+      <div id="order-wizard-container">
+        <!-- Conteúdo dinâmico montado via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE GERENCIAMENTO (LOGIN / ADMIN / GERENTE) -->
+  <div id="modal-manage" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-manage-modal">&times;</button>
+      
+      <!-- Formulário de Login -->
+      <div id="manage-login-view">
+        <h2>Acesso Restrito</h2>
+        <form id="form-login">
+          <div class="form-group">
+            <label>Usuário:</label>
+            <input type="text" id="login-user" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label>Senha:</label>
+            <input type="password" id="login-pass" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+      </div>
+
+      <!-- Painel do Gerente / Admin -->
+      <div id="manage-panel-view" class="hidden">
+        <div class="panel-header">
+          <h2 id="panel-role-title">Painel de Controle</h2>
+          <button id="btn-logout" class="btn-danger-sm">Sair</button>
+        </div>
+
+        <div id="admin-only-section" class="hidden">
+          <h3>Configurações do Restaurante (Admin)</h3>
+          <form id="form-admin-config">
+            <div class="form-grid">
+              <div>
+                <label>Preço Marmita (R$):</label>
+                <input type="number" step="0.5" id="cfg-marmita-price">
+              </div>
+              <div>
+                <label>Taxa Entrega (R$):</label>
+                <input type="number" step="0.5" id="cfg-delivery-fee">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Chave PIX:</label>
+              <input type="text" id="cfg-pix-key">
+            </div>
+            <div class="form-group">
+              <label>WhatsApp (com DDD, apenas números):</label>
+              <input type="text" id="cfg-whatsapp">
+            </div>
+            <button type="submit" class="btn-primary-sm">Salvar Configurações</button>
+          </form>
+          <hr>
+          <h3>Alterar Senhas de Acesso</h3>
+          <form id="form-change-pass">
+            <div class="form-grid">
+              <select id="pass-user-select">
+                <option value="gerente">Gerente</option>
+                <option value="admin">Admin</option>
+              </select>
+              <input type="password" id="pass-new-val" placeholder="Nova Senha (min. 6 carac.)">
+            </div>
+            <button type="submit" class="btn-secondary-sm">Atualizar Senha</button>
+          </form>
+          <hr>
+        </div>
+
+        <h3>Gestão de Disponibilidade e Preços do Cardápio</h3>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="tab-sides">Guarnições</button>
+          <button class="tab-btn" data-tab="tab-proteins">Proteínas</button>
+          <button class="tab-btn" data-tab="tab-drinks">Bebidas</button>
+          <button class="tab-btn" data-tab="tab-desserts">Sobremesas</button>
+        </div>
+
+        <div class="tab-content" id="tab-menu-manage">
+          <!-- Lista dinâmica de gestão do cardápio -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
