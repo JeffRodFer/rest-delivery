@@ -37,70 +37,7 @@ async function carregarCardapio() {
 }
 
 // Exibe a vitrine estática no descanso da página
-function renderizarCardapioVitrine(produtos) {
-    const conteiner = document.getElementById('cardapio-vitrine');
-    if (!conteiner) return;
 
-    if (!produtos || produtos.length === 0) {
-        conteiner.innerHTML = '<p style="text-align:center;">Nenhum item disponível no momento.</p>';
-        return;
-    }
-
-    const proteinas = produtos.filter(p => p.categoria === 'Proteína');
-    const guarnicoes = produtos.filter(p => p.categoria === 'Guarnição');
-    const bebidas = produtos.filter(p => p.categoria === 'Bebida');
-    const sobremesas = produtos.filter(p => p.categoria === 'Sobremesa');
-
-    let html = '';
-
-    // 3. Proteínas (Horizontal com 8 itens por linha)
-    if (proteinas.length > 0) {
-        html += `<section class="secao-cardapio">
-            <h2>Proteínas</h2>
-            <div class="grid-proteinas">`;
-        proteinas.forEach(p => {
-            html += `<div class="item-card">${p.nome}</div>`;
-        });
-        html += `</div></section>`;
-    }
-
-    // 4. Guarnições (Horizontal com 5 itens por linha)
-    if (guarnicoes.length > 0) {
-        html += `<section class="secao-cardapio">
-            <h2>Guarnições</h2>
-            <div class="grid-guarnicoes">`;
-        guarnicoes.forEach(g => {
-            html += `<div class="item-card">${g.nome}</div>`;
-        });
-        html += `</div></section>`;
-    }
-
-    // 5. Bebidas (Horizontal com 6 itens por linha)
-    if (bebidas.length > 0) {
-        html += `<section class="secao-cardapio">
-            <h2>Bebidas</h2>
-            <div class="grid-bebidas">`;
-        bebidas.forEach(b => {
-            const precoStr = b.preco ? ` - R$ ${b.preco.toFixed(2)}` : '';
-            html += `<div class="item-card">${b.nome}${precoStr}</div>`;
-        });
-        html += `</div></section>`;
-    }
-
-    // 6. Sobremesas (Horizontal com 6 itens por linha)
-    if (sobremesas.length > 0) {
-        html += `<section class="secao-cardapio">
-            <h2>Sobremesas</h2>
-            <div class="grid-sobremesas">`;
-        sobremesas.forEach(s => {
-            const precoStr = s.preco ? ` - R$ ${s.preco.toFixed(2)}` : '';
-            html += `<div class="item-card">${s.nome}${precoStr}</div>`;
-        });
-        html += `</div></section>`;
-    }
-
-    conteiner.innerHTML = html;
-}
 
 // 3. Fluxo do Formulário do Cliente
 function abrirModalPedido() {
