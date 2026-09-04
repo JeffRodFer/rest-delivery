@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - Restaurante</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    .box { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: 20px auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .item-linha { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #ddd; }
+    .btn { padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; color: white; font-weight: bold; }
+    .btn-on { background-color: #28a745; }
+    .btn-off { background-color: #dc3545; }
+    .oculto { display: none; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+
+  <!-- Tela de Login -->
+  <div id="tela-login" class="box">
+    <h2>Login Administrativo</h2>
+    <input type="password" id="senha" placeholder="Digite a senha de admin">
+    <button onclick="fazerLogin()">Entrar</button>
+  </div>
+
+  <!-- Painel de Controle -->
+  <div id="tela-painel" class="box oculto">
+    <h2>Gerenciar Cardápio</h2>
+    <button onclick="sair()" style="background-color: #6c757d; color: white;">Sair</button>
+    <div id="lista-itens"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
